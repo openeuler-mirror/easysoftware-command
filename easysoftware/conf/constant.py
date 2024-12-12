@@ -42,6 +42,8 @@ HEADERS = {
 
 SEARCH_URL = "https://easysoftware.openeuler.org/api-search/software/docs"
 
+INFO_URL = "https://easysoftware.openeuler.org/server/field/detailname"
+
 class CommandExitCode:
     SUCCEED = 0
     FAIL = 255

@@ -169,7 +169,7 @@ Version:        1.0
 Release:        1
 Summary:        The easiest way to help every developer find what they want.
 License:        MulanPSL2
-URL:            https://gitee.com/openeuler/%{name}
+URL:            https://gitee.com/openeuler/easysoftware-command
 # 以上信息是rpm包的元信息，可以通过命令`rpm -qi easysoftware`查询。
 
 Source0:        %{name}-%{version}.tar.gz # easysoftware-1.0.tar.gz,源码包的名称

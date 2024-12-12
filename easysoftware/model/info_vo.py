@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # ******************************************************************************
-# Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
+# Copyright (c) openEuler. 2024. All rights reserved.
 # licensed under the Mulan PSL v2.
 # You can use this software according to the terms and conditions of the Mulan PSL v2.
 # You may obtain a copy of Mulan PSL v2 at:
@@ -10,7 +10,15 @@
 # PURPOSE.
 # See the Mulan PSL v2 for more details.
 # ******************************************************************************/
-from easysoftware.cli.search import SearchCommand
-from easysoftware.cli.info import InfoCommand
 
-__all__ = ["SearchCommand", "InfoCommand"]
+from dataclasses import dataclass
+@dataclass
+class InfoVo:
+    os: str
+    arch: str
+    name: str
+    version: str
+    category: str
+    tags: str
+    description: str
+    maintainers: str
