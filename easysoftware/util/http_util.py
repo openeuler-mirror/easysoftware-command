@@ -11,7 +11,7 @@
 # See the Mulan PSL v2 for more details.
 # ******************************************************************************/
 
-from easysoftware.conf.constant import SEARCH_RPM,SEARCH_DOCKER,SEARCH_OEPKG,HEADERS,SEARCH_URL
+from easysoftware.conf.constant import SEARCH_RPM,SEARCH_DOCKER,SEARCH_OEPKG,HEADERS,SEARCH_URL, INFO_URL
 from easysoftware.function.log import LOGGER
 import requests
 import json
@@ -48,6 +48,15 @@ class HttpUtil:
         SEARCH_OEPKG["keyword"] = pkg_name
 
         response = requests.post(SEARCH_URL, data=json.dumps(SEARCH_OEPKG), headers=HEADERS)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            LOGGER.error(f"error：{response.text}")
+            return {"error": "check network", "status_code": response.status_code}
+
+    @staticmethod
+    def reqeust_info_pkg(pkg_name) -> json:
+        response = requests.get(INFO_URL, params={"name": pkg_name})
         if response.status_code == 200:
             return response.json()
         else:
