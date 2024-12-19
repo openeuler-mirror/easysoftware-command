@@ -28,6 +28,6 @@ class SearchVo:
         print(std)
 
     def modify_field(self):
-        self.name = self.name.lstrip("<span>")
+        self.name = self.name.replace("<span>","")
         self.name = self.name.replace("</span>","")
 

@@ -36,7 +36,7 @@ class InfoCommand(BaseCommand):
         return self._sub_command
 
     def _add_arguments(self):
-        self.parser.add_argument('--name', type=str)
+        self.parser.add_argument('--name', type=str, help="Specify the name you wish to query on openEuler.")
 
     def execute(self, namespace):
         """
