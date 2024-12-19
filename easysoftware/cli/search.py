@@ -38,9 +38,9 @@ class SearchCommand(BaseCommand):
         return self._sub_command
 
     def _add_arguments(self):
-        self.parser.add_argument('--oepkg', type=str)
-        self.parser.add_argument('--docker', type=str)
-        self.parser.add_argument('--rpm', type=str)
+        self.parser.add_argument('--oepkg', type=str, help="Specify the name of the OEPKG to operate on. This parameter should be a string representing the name of the OEPKG you wish to query.")
+        self.parser.add_argument('--docker', type=str, help="Specify the name of the docker to operate on. This parameter should be a string representing the name of the docker you wish to query.")
+        self.parser.add_argument('--rpm', type=str, help="Specify the name of the rpm to operate on. This parameter should be a string representing the name of the rpm you wish to query.")
 
     def execute(self, namespace):
         """
